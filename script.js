@@ -2,7 +2,16 @@
 var generateBtn = document.querySelector("#generate");
 
 function randomInt(min, max) {
-  return Math.floor(Math.random() * (max - min) + min);
+  if (!max) {
+    max = min;
+    min = 0;
+  }
+  var rand = Math.random();
+  return Math.floor(min * (1 - rand) + rand * max);
+}
+
+function getRandomItem(list) {
+  return list[randomInt(list.length)];
 }
 
 function generatePassword() {
@@ -60,13 +69,40 @@ function generatePassword() {
     "n",
     "m",
   ];
-  var upperCase = [];
+  var upperCase = [
+    "Q",
+    "W",
+    "E",
+    "R",
+    "T",
+    "Y",
+    "U",
+    "I",
+    "O",
+    "P",
+    "A",
+    "S",
+    "D",
+    "F",
+    "G",
+    "H",
+    "J",
+    "K",
+    "L",
+    "Z",
+    "X",
+    "C",
+    "V",
+    "B",
+    "N",
+    "M",
+  ];
 
   var everything = [];
 
-  for (var i = 0; i < lowerCase.length; i++) {
-    upperCase[i] = lowerCase[i].toUpperCase();
-  }
+  // for (var i = 0; i < lowerCase.length; i++) {
+  //   upperCase[i] = lowerCase[i].toUpperCase();
+  // }
 
   if (userNum === true) {
     everything.push(numList);
@@ -81,8 +117,13 @@ function generatePassword() {
     everything.push(upperCase);
   }
 
+  var generatePassword = "";
+
   for (var i = 0; i < passwordLength; i++) {
-    var randomItem = everything[randomInt(0, everything.length - 1)];
+    var randomList = getRandomItem(everything);
+    var randomChar = getRandomItem(randomList);
+    generatePassword += randomChar;
+    console.log(generatePassword);
   }
 }
 
