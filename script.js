@@ -69,40 +69,13 @@ function generatePassword() {
     "n",
     "m",
   ];
-  var upperCase = [
-    "Q",
-    "W",
-    "E",
-    "R",
-    "T",
-    "Y",
-    "U",
-    "I",
-    "O",
-    "P",
-    "A",
-    "S",
-    "D",
-    "F",
-    "G",
-    "H",
-    "J",
-    "K",
-    "L",
-    "Z",
-    "X",
-    "C",
-    "V",
-    "B",
-    "N",
-    "M",
-  ];
+  var upperCaselist = [];
 
   var everything = [];
 
-  // for (var i = 0; i < lowerCase.length; i++) {
-  //   upperCase[i] = lowerCase[i].toUpperCase();
-  // }
+  for (var i = 0; i < lowerCase.length; i++) {
+    upperCaselist[i] = lowerCase[i].toUpperCase();
+  }
 
   if (userNum === true) {
     everything.push(numList);
@@ -113,8 +86,13 @@ function generatePassword() {
   if (userLcase === true) {
     everything.push(lowerCase);
   }
-  if (upperCase === true) {
-    everything.push(upperCase);
+  if (userUcase === true) {
+    everything.push(upperCaselist);
+  }
+
+  if (everything.length === 0) {
+    window.alert("Must choose 1 option");
+    return;
   }
 
   var generatePassword = "";
@@ -123,8 +101,9 @@ function generatePassword() {
     var randomList = getRandomItem(everything);
     var randomChar = getRandomItem(randomList);
     generatePassword += randomChar;
-    console.log(generatePassword);
   }
+
+  return generatePassword;
 }
 
 // Write password to the #password input
