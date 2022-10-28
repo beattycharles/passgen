@@ -17,7 +17,7 @@ function getRandomItem(list) {
 function generatePassword() {
   var userInput = window.prompt("How long do you want your password?");
   var passwordLength = parseInt(userInput);
-
+  // must choose good values
   if (isNaN(passwordLength)) {
     window.alert("Must choose a number");
     return;
@@ -27,7 +27,7 @@ function generatePassword() {
     window.alert("Password length must be between 8 and 128.");
     return;
   }
-
+  // questions
   var userNum = window.confirm("Do you want numbers in password?");
   var userSym = window.confirm(
     "Do you want Special Charcters in your password?"
@@ -36,9 +36,9 @@ function generatePassword() {
     "Do you want lower case letters in your password?"
   );
   var userUcase = window.confirm(
-    "Do you want upper case letters in your password?"
+    "Do you want UPPER case letters in your password?"
   );
-
+  // list of inputs
   var numList = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
   var sysList = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "?"];
   var lowerCase = [
@@ -69,6 +69,7 @@ function generatePassword() {
     "n",
     "m",
   ];
+  // make lowerCase to upperCase
   var upperCaselist = [];
 
   var everything = [];
@@ -76,7 +77,7 @@ function generatePassword() {
   for (var i = 0; i < lowerCase.length; i++) {
     upperCaselist[i] = lowerCase[i].toUpperCase();
   }
-
+  // add values into one
   if (userNum === true) {
     everything.push(numList);
   }
