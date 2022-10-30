@@ -17,7 +17,7 @@ Planned usage is to help those who need help creating random secured passwords f
 
 ## Screeshot
 
-![Screenshot](passgenscreen.png
+![Screenshot](passgenscreen.png)
 
 ## Access
 
