@@ -26,6 +26,7 @@ Planned usage is to help those who need help creating random secured passwords f
 
 ## Credits
 Special Thanks to: https://github.com/BogartDME https://github.com/EvolanGIT https://github.com/difurung.
+Information and code help from javascrpitinfo.com w3schools.com.
 
 ## Roadmap
 As of 10/30/22 no future updates are planned for this website
